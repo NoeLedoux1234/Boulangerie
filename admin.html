@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Administration | Boulangerie en Ligne</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Boulangerie en Ligne</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="produits.html">Produits</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="admin.html">Administration</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="loginForm">
+        <h2>Connexion Administrateur</h2>
+        <form id="adminLoginForm">
+            <input type="text" id="username" placeholder="Nom d'utilisateur" />
+            <input type="password" id="password" placeholder="Mot de passe" />
+            <button type="submit">Connexion</button>
+        </form>
+        <p id="loginResult"></p>
+    </section>
+
+    <footer>
+        <p>© 2024 Boulangerie en Ligne</p>
+    </footer>
+</body>
+</html>
+``
+<script>
+    document.getElementById('adminLoginForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+
+        if(username === "' OR '1'='1" && password === "' OR '1'='1") {
+            document.getElementById('loginResult').textContent = 'Connexion réussie (vulnérable à l\'injection SQL).';
+        } else {
+            document.getElementById('loginResult').textContent = 'Connexion échouée.';
+        }
+    });
+</script>
+

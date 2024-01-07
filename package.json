@@ -1,0 +1,20 @@
+{
+  "name": "boulangerie-en-ligne",
+  "version": "1.0.0",
+  "description": "Un site de démonstration pour simuler des attaques web dans le cadre d'un projet éducatif.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "boulangerie",
+    "sécurité",
+    "web",
+    "éducation"
+  ],
+  "author": "Votre Nom",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
