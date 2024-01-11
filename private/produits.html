@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Produits | Boulangerie en Ligne</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Boulangerie en Ligne</h1>
+        <nav>
+            <ul>
+                <li><a href="/accueil">Accueil</a></li>
+<li><a href="/produits">Commentaires</a></li>
+<li><a href="/admin">Administration</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="produits">
+        <h2>Nos Produits</h2>
+        <div>
+        </div>
+        <section id="commentaires">
+            <form id="commentForm">
+                <input type="text" id="commentInput" placeholder="Ajoutez un commentaire..." />
+                <button type="submit">Envoyer</button>
+            </form>
+            <div id="commentSection"></div>
+        </section>
+        
+
+    <footer>
+        <p>© 2024 Boulangerie en Ligne</p>
+    </footer>
+    
+    <script>
+document.getElementById('commentForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    var comment = document.getElementById('commentInput').value;
+    var commentDiv = document.createElement('div');
+    commentDiv.classList.add('comment');
+    commentDiv.innerHTML = '<p>' + comment + '</p>';
+    document.getElementById('commentSection').appendChild(commentDiv);
+    document.getElementById('commentInput').value = '';
+});
+
+
+
+    </script>
+</body>
+</html>
+
+
+

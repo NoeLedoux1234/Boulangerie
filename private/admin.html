@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Administration | Boulangerie en Ligne</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Boulangerie en Ligne</h1>
+        <nav>
+            <ul>
+                <li><a href="/accueil">Accueil</a>
+                </li>
+                <li><a href="/produits">Commentaires</a>
+                </li>
+                <li class="active"><a href="/admin">Administration</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="loginForm">
+        <h2>Connexion Administrateur</h2>
+        <form id="login-form" action="/login" method="post">
+            <input type="text" name="username" placeholder="Nom d'utilisateur" required>
+            <input type="password" name="password" placeholder="Mot de passe" required>
+            <input type="hidden" name="_csrf" value="">
+            <button type="submit">Connexion</button>
+        </form>
+    </section>
+
+    <section id="passwordChangeForm">
+        <h2>Changer le mot de passe d'un utilisateur</h2>
+        <form id="change-password-form" action="/change-password" method="post">
+            <input type="hidden" name="_csrf" value="">
+            <input type="text" name="username" placeholder="Nom d'utilisateur" required>
+            <input type="password" name="newPassword" placeholder="Nouveau mot de passe" required>
+            <button type="submit">Changer le mot de passe</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2024 Boulangerie en Ligne</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('/csrf-token')
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(data) {
+                    const csrfToken = data.csrfToken;
+                    document.querySelector('#login-form input[name="_csrf"]').value = csrfToken;
+                    document.querySelector('#change-password-form input[name="_csrf"]').value = csrfToken;
+                });
+        });
+    </script>
+</body>
+</html>

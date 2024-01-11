@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Boulangerie en Ligne</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    
+</head>
+<body>
+    <header>
+        <h1>Bienvenue à Notre Boulangerie</h1>
+        <nav>
+            <ul>
+              <li><a href="/accueil">Accueil</a></li>
+              <li><a href="/produits">Commentaires</a></li>
+              <li><a href="/admin">Administration</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="presentation">
+        <h2>Découvrez Nos Produits Frais</h2>
+        <p>Nous offrons une variété de pains, gâteaux et pâtisseries faites maison.</p>
+    </section>
+
+    <section id="introduction">
+        <h2>Bienvenue dans notre Boulangerie!</h2>
+        <p>Découvrez nos délicieuses créations artisanales, préparées chaque jour avec passion.</p>
+    </section>
+    
+    <section class="carrousel-container">
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="./image/DALL·E 2024-01-10 23.25.14 - A hyper-realistic image of a mouth-watering loaf of bread with an emphasis on realism. The bread should have a perfect golden-brown crust, showcasing .png" alt="Image 1"></div>
+      <div class="swiper-slide"><img src="./image/DALL·E 2024-01-10 23.26.08 - A hyper-realistic image of a delicious pain au chocolat. The pastry should have a perfectly golden, flaky exterior with visible layers, suggesting a c.png" alt="Image 2"></div>
+      <div class="swiper-slide"><img src="./image/DALL·E 2024-01-10 23.26.40 - A hyper-realistic image of a freshly baked croissant. The croissant should be perfectly golden-brown with a glossy, flaky exterior, suggesting a crisp.png" alt="Image 3"></div>
+    </div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+  
+    </section>
+
+    <section id="offres-speciales">
+        <h2>Offres Spéciales</h2>
+        <p>Cher client, vérifiez vos offres exclusives du moment !</p>
+        <a href="/email-fictif.html" class="btn-offres">Voir les Offres</a>
+    </section>
+    
+    <script>
+        // Parse l'URL pour obtenir le paramètre de requête 'script'
+        const params = new URLSearchParams(window.location.search);
+        const scriptName = params.get('script');
+        if (scriptName) {
+          const script = document.createElement('script');
+          script.src = scriptName;
+          document.body.appendChild(script);
+        }
+      </script>
+    
+    <footer>
+        <p>© 2024 Boulangerie en Ligne</p>
+    </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper('.swiper-container', {
+    slidesPerView: 'auto', // Affiche uniquement les diapositives qui rentrent dans l'espace disponible
+    centeredSlides: true, // Centre les diapositives actives
+    spaceBetween: 30, // Espace entre les diapositives
+    navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});
+      </script>
+</body>
+
+</html>

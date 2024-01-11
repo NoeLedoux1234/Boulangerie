@@ -1,24 +1,30 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: #fff8f0;
+    padding-bottom: 70px; /* Hauteur du footer pour éviter le chevauchement */
+    font-family: 'Roboto', sans-serif;
 }
 
 header {
-    background-color: #8b5d33;
+    background-color: #956d5d;
     color: #ffffff;
-    text-align: center;
     padding: 1em 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 header h1 {
-    margin: 0;
+    font-size: 2.5em;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
+    text-align: center;
 }
 
 nav ul li {
@@ -29,20 +35,151 @@ nav ul li {
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-weight: bold;
+    padding: 5px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #f4d8cd;
 }
 
 section {
     text-align: center;
     margin: 2em 0;
+    flex: 1;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 20px;
+    width: 300px;
+    display: inline-block;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #956d5d;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 4px;
+}
+
+button:hover {
+    opacity: 0.8;
 }
 
 footer {
-    text-align: center;
-    padding: 1em 0;
-    background-color: #8b5d33;
-    color: #fff;
-    position: fixed;
+    position: absolute;
     bottom: 0;
     width: 100%;
+    height: 100px; /* Hauteur du footer */
+    background-color: #956d5d;
+    color: #fff;
+    text-align: center;
+    line-height: 70px; /* Alignement vertical du texte dans le footer */
+}
+
+#offres-speciales {
+    padding: 20px;
+    text-align: center;
+}
+
+.btn-offres {
+    background-color: #956d5d;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn-offres:hover {
+    background-color: #f3b8a8;
+}
+
+.introduction, .carrousel {
+    margin: 2em auto;
+}
+
+.swiper-container {
+    width: 100%; /* Prend toute la largeur du conteneur parent */
+    max-width: 1200px; /* Largeur maximale du carrousel */
+    margin: auto; /* Centrage horizontal */
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Centre le contenu de la slide verticalement et horizontalement */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Assurez-vous que la hauteur est suffisante pour éviter le chevauchement */
+.swiper-slide img {
+    width: 250px; /* Largeur fixe pour toutes les images */
+    height: 150px; /* Hauteur fixe pour toutes les images */
+    object-fit: cover; /* Garantit que l'image couvre l'espace dédié sans se déformer */
+    border-radius: 10px; /* Arrondir les coins si souhaité */
+}
+/* Positionnement des flèches de navigation */
+.swiper-button-next, .swiper-button-prev {
+    color: #956d5d;
+    position: absolute;
+    top: 50%; /* Centrer verticalement par rapport au carrousel */
+    width: 50px; /* Largeur des flèches */
+    height: 50px; /* Hauteur des flèches */
+    margin-top: -25px; /* Décalage pour le centrage vertical */
+    background: rgba(255, 255, 255, 0.5); /* Fond semi-transparent pour la visibilité */
+    border-radius: 25px; /* Arrondir les coins */
+    z-index: 10; /* S'assurer que les flèches sont au-dessus des images */
+}
+
+.swiper-button-next {
+    right: 10px; /* Distance du bord droit du carrousel */
+}
+
+.swiper-button-prev {
+    left: 10px; /* Distance du bord gauche du carrousel */
+}
+
+.carrousel-container {
+    max-width: 1200px; /* ou la largeur maximale que vous souhaitez pour votre carrousel */
+    margin: auto; /* pour centrer le carrousel */
+    overflow: hidden; /* pour masquer les débordements */
 }

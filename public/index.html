@@ -2,29 +2,37 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Boulangerie en Ligne</title>
+    <title>Connexion | Boulangerie en Ligne</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <header>
-        <h1>Bienvenue à Notre Boulangerie</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="produits.html">Produits</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="admin.html">Administration</a></li>
-            </ul>
-        </nav>
+        <h1>Connexion à la Boulangerie en Ligne</h1>
     </header>
 
-    <section id="presentation">
-        <h2>Découvrez Nos Produits Frais</h2>
-        <p>Nous offrons une variété de pains, gâteaux et pâtisseries faites maison.</p>
+    <section id="loginForm">
+        <form id="adminLoginForm" action="/login" method="post">
+            <input type="text" id="username" name="username" placeholder="Nom d'utilisateur" required />
+            <input type="password" id="password" name="password" placeholder="Mot de passe" required />
+            <input type="hidden" name="_csrf" value="">
+            <button type="submit">Connexion</button>
+        </form>
     </section>
 
     <footer>
         <p>© 2024 Boulangerie en Ligne</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('/csrf-token')
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(data) {
+                    document.querySelector('#adminLoginForm input[name="_csrf"]').value = data.csrfToken;
+                });
+        });
+    </script>
 </body>
 </html>
