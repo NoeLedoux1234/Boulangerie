@@ -57,8 +57,7 @@ app.post('/login', csrfProtection, (req, res) => {
     });
 });
 
-// Change password route
-app.post('/change-password', csrfProtection, checkAuth, (req, res) => {
+app.post('/change-password', (req, res) => {
     const { username, newPassword } = req.body;
     const updateSql = "UPDATE users SET password = ? WHERE username = ?";
     db.run(updateSql, [newPassword, username], function(err) {

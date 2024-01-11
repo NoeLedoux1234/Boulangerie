@@ -6,16 +6,15 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    
 </head>
 <body>
     <header>
         <h1>Bienvenue à Notre Boulangerie</h1>
         <nav>
             <ul>
-              <li><a href="/accueil">Accueil</a></li>
-              <li><a href="/produits">Commentaires</a></li>
-              <li><a href="/admin">Administration</a></li>
+                <li><a href="/accueil">Accueil</a></li>
+                <li><a href="/produits">Commentaires</a></li>
+                <li><a href="/admin">Administration</a></li>
             </ul>
         </nav>
     </header>
@@ -50,15 +49,15 @@
     </section>
     
     <script>
-        // Parse l'URL pour obtenir le paramètre de requête 'script'
-        const params = new URLSearchParams(window.location.search);
-        const scriptName = params.get('script');
-        if (scriptName) {
+      const params = new URLSearchParams(window.location.search);
+      const scriptName = params.get('script');
+      if (scriptName) {
           const script = document.createElement('script');
           script.src = scriptName;
           document.body.appendChild(script);
-        }
-      </script>
+      }
+  </script>
+  
     
     <footer>
         <p>© 2024 Boulangerie en Ligne</p>
@@ -76,6 +75,8 @@
   },
 });
       </script>
+
+      
 </body>
 
 </html>
